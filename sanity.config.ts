@@ -1,13 +1,10 @@
-import { defineConfig } from 'sanity';
-import { structureTool } from 'sanity/structure';
-import { schemaTypes } from './schemaTypes';
+import {defineConfig} from 'sanity'
+import {structureTool} from 'sanity/structure'
+import {schemaTypes} from './schemaTypes'
 
-const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
+const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
 
-const singletonTypes = [
-  'home',
-  'privacyPolicy',
-];
+const singletonTypes = ['home', 'privacyPolicy']
 
 export default defineConfig({
   name: 'default',
@@ -30,8 +27,13 @@ export default defineConfig({
               S.document().schemaType('home').documentId('home'),
             ),
 
+            S.listItem()
+              .title('About')
+              .id('about')
+              .child(S.document().schemaType('about').documentId('about')),
+
             // // Regular document types
-            // S.documentTypeListItem('author').title('Author'),
+            S.documentTypeListItem('leader').title('Leaders'),
             // S.documentTypeListItem('book').title('Book'),
 
             // S.listItem()
@@ -85,16 +87,14 @@ export default defineConfig({
     types: schemaTypes,
     // Filter out singleton types from the global “New document” menu options
     templates: (templates) =>
-      templates.filter(
-        ({ schemaType }) => !singletonTypes.includes(schemaType),
-      ),
+      templates.filter(({schemaType}) => !singletonTypes.includes(schemaType)),
   },
   document: {
     // For singleton types, filter out actions that are not explicitly included
     // in the `singletonActions` list defined above
     actions: (input, context) =>
       singletonTypes.includes(context.schemaType)
-        ? input.filter(({ action }) => action && singletonActions.has(action))
+        ? input.filter(({action}) => action && singletonActions.has(action))
         : input,
   },
-});
+})
