@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'leader',
-  title: 'Leader',
+  name: 'ministry',
+  title: 'Ministry',
   type: 'document',
   fields: [
     defineField({
@@ -12,9 +12,10 @@ export default defineType({
       validation: (Rule) => [Rule.required()],
     }),
     defineField({
-      name: 'role',
-      title: 'Role',
-      type: 'string',
+      name: 'mainText',
+      title: 'Main Text',
+      type: 'array',
+      of: [{type: 'block'}],
       validation: (Rule) => [Rule.required()],
     }),
 
@@ -33,18 +34,6 @@ export default defineType({
           validation: (Rule) => [Rule.required()],
         },
       ],
-    }),
-
-    defineField({
-      name: 'email',
-      title: 'Email',
-      type: 'email',
-    }),
-
-    defineField({
-      name: 'pastor',
-      title: 'Link to Pastor Page',
-      type: 'boolean',
     }),
   ],
 })

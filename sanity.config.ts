@@ -32,6 +32,12 @@ export default defineConfig({
               .id('about')
               .child(S.document().schemaType('about').documentId('about')),
 
+
+            S.listItem()
+              .title('Ministries')
+              .id('ministries')
+              .child(S.document().schemaType('ministries').documentId('ministries')),
+
             // // Regular document types
             S.documentTypeListItem('leader').title('Leaders'),
             // S.documentTypeListItem('book').title('Book'),
