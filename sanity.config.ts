@@ -32,11 +32,15 @@ export default defineConfig({
               .id('about')
               .child(S.document().schemaType('about').documentId('about')),
 
-
             S.listItem()
               .title('Ministries')
               .id('ministries')
               .child(S.document().schemaType('ministries').documentId('ministries')),
+
+            S.listItem()
+              .title('Give')
+              .id('give')
+              .child(S.document().schemaType('give').documentId('give')),
 
             // // Regular document types
             S.documentTypeListItem('leader').title('Leaders'),
