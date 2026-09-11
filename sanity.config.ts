@@ -32,6 +32,8 @@ export default defineConfig({
               .id('about')
               .child(S.document().schemaType('about').documentId('about')),
 
+            S.documentTypeListItem('leader').title('Leaders'),
+
             S.listItem()
               .title('Ministries')
               .id('ministries')
@@ -42,53 +44,15 @@ export default defineConfig({
               .id('give')
               .child(S.document().schemaType('give').documentId('give')),
 
-            // // Regular document types
-            S.documentTypeListItem('leader').title('Leaders'),
-            // S.documentTypeListItem('book').title('Book'),
+            S.listItem()
+              .title('Visit')
+              .id('visit')
+              .child(S.document().schemaType('visit').documentId('visit')),
 
-            // S.listItem()
-            //   .title('Books Page')
-            //   .id('bookPage')
-            //   .child(
-            //     S.document().schemaType('bookPage').documentId('bookPage'),
-            //   ),
-
-            // S.documentTypeListItem('lore').title('Lore'),
-            // S.listItem()
-            //   .title('Lore Page')
-            //   .id('lorePage')
-            //   .child(
-            //     S.document().schemaType('lorePage').documentId('lorePage'),
-            //   ),
-
-            // S.documentTypeListItem('news').title('News'),
-            // S.documentTypeListItem('event').title('Event'),
-
-            // S.listItem()
-            //   .title('News and Events Page')
-            //   .id('newsEventPage')
-            //   .child(
-            //     S.document()
-            //       .schemaType('newsEventPage')
-            //       .documentId('newsEventPage'),
-            //   ),
-
-            // S.listItem()
-            //   .title('About')
-            //   .id('about')
-            //   .child(S.document().schemaType('about').documentId('about')),
-            // S.listItem()
-            //   .title('Contact')
-            //   .id('contact')
-            //   .child(S.document().schemaType('contact').documentId('contact')),
-            // S.listItem()
-            //   .title('Privacy Policy')
-            //   .id('privacyPolicy')
-            //   .child(
-            //     S.document()
-            //       .schemaType('privacyPolicy')
-            //       .documentId('privacyPolicy'),
-            //   ),
+            S.listItem()
+              .title('Privacy Policy')
+              .id('privacyPolicy')
+              .child(S.document().schemaType('privacyPolicy').documentId('privacyPolicy')),
           ]),
     }),
   ],
