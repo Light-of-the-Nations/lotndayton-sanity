@@ -7,6 +7,7 @@ import ministry from './ministry'
 import faq from './faq'
 import visit from './visit'
 import privacyPolicy from './privacy-policy'
+import pastor from './pastor'
 
 export const schemaTypes = [
   about,
@@ -18,4 +19,5 @@ export const schemaTypes = [
   faq,
   visit,
   privacyPolicy,
+  pastor,
 ]

@@ -35,6 +35,11 @@ export default defineConfig({
             S.documentTypeListItem('leader').title('Leaders'),
 
             S.listItem()
+              .title('Pastor')
+              .id('pastor')
+              .child(S.document().schemaType('pastor').documentId('pastor')),
+
+            S.listItem()
               .title('Ministries')
               .id('ministries')
               .child(S.document().schemaType('ministries').documentId('ministries')),
